@@ -11,32 +11,37 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
             color: #fff;
+            text-align: center;
+            min-height: 100vh; /* Allow content to grow */
+        }
+        main {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            justify-content: center;
+            padding: 20px;
+            width: 100%;
         }
         h1 {
             font-size: 3.5rem;
             text-shadow: 2px 2px 5px #f08080;
-            animation: fadeIn 2s ease-in-out;
+            margin: 10px 0;
         }
         h2 {
             font-size: 2rem;
             margin: 10px 0;
-            animation: fadeIn 3s ease-in-out;
+            word-wrap: break-word;
+            max-width: 90%; /* Prevent overflowing text */
         }
         p {
             font-size: 1.2rem;
-            max-width: 700px;
-            text-align: center;
-            margin: 20px 0;
-            animation: fadeIn 4s ease-in-out;
+            max-width: 90%;
+            margin: 10px auto;
+            line-height: 1.5;
         }
         .heart {
-            font-size: 5rem;
+            font-size: 4rem;
+            margin: 15px 0;
             animation: heartbeat 1s infinite ease-in-out;
         }
         button {
@@ -48,42 +53,94 @@
             border-radius: 25px;
             cursor: pointer;
             transition: background-color 0.3s;
-            animation: fadeIn 5s ease-in-out;
+            margin-top: 15px;
         }
         button:hover {
             background-color: #ff385c;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .image-container {
+            margin: 20px 0;
+            width: 100%; /* Ensure image container is responsive */
         }
+        .image-container img {
+            max-width: 300px;
+            width: 80%;
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 50%;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        audio {
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            .heart {
+                font-size: 3rem;
+            }
+            .image-container img {
+                max-width: 250px; /* Scale down image on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+                margin: 10px auto;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+            .heart {
+                font-size: 2.5rem;
+            }
+            .image-container img {
+                max-width: 200px; /* Smaller images on very small screens */
+            }
+        }
+
+        /* Keyframes for animations */
         @keyframes heartbeat {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.1); }
         }
-        .image-container {
-            margin-top: 20px;
-            animation: fadeIn 6s ease-in-out;
-        }
-        .image-container img {
-            max-width: 300px;
-            border-radius: 50%;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-        }
     </style>
 </head>
 <body>
-    <h1>Happy Birthday, My Love! 🎉</h1>
-    <h2>To the most amazing girl in the world</h2>
-    <p>
-        Today, we celebrate you and all the incredible moments we've shared. 
-        You're the light of my life, my best friend, and my everything. 
-        I hope your day is filled with as much joy and love as you bring into my life every single day. ❤️
-    </p>
-    <div class="heart">❤️</div>
-    <button onclick="alert('I love you! 🥰')">Click for a Surprise!</button>
-    <div class="image-container">
-        <img src="p.jpg" alt="Your Picture Here">
-    </div>
+    <main>
+        <h1>Happy Birthday, My Love! 🎉</h1>
+        <h2>To the most amazing girl in the world</h2>
+        <p>
+            Today, we celebrate you and all the incredible moments we've shared. 
+            You're the light of my life, my best friend, and my everything. 
+            I hope your day is filled with as much joy and love as you bring into my life every single day. ❤️
+        </p>
+        <div class="heart">❤️</div>
+        <button onclick="alert('I love you! 🥰')">Click for a Surprise!</button>
+        <div class="image-container">
+            <!-- Updated image source -->
+            <img src="p.jpg" alt="Your Picture Here">
+        </div>
+        <audio autoplay loop>
+            <source src="shb.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </main>
 </body>
 </html>
